@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta charset="utf-8" />
+	<script src="https://cdn.bootcss.com/jquery/1.8.3/jquery.min.js"></script>
+	<script src="https://cdn.bootcss.com/jquery.form/4.2.2/jquery.form.js"></script>
+	<script src="./js/clipBoard.min.js"></script>
+	<script src="./js/sm.js"></script>
+	<style type="text/css">
+		a:link {
+			color: #757575;
+			text-decoration: none;
+		}
+		
+		a:hover {
+			color: blue;
+			text-decoration: none;
+		}	
+		a:active {
+			color: red;
+			text-decoration: none;
+		}
+	</style>
+	<body>
+		<center>
+			<form enctype="multipart/form-data" method="post" action="https://sm.ms/api/upload" id="upform">
+				<input type="file" name="smfile" id="smfile" class="up-file" style="display:none">
+				<input type="submit" id='btn' value="开始上传" class="btn" style="display:none">
+				<a href="javascript:;" class="inputimage" id="inputimage" style="font-size: 14px;font-family: 微软雅黑;">选择图片 </a>
+				<input type="text" style="font-size: 14px;font-family: 微软雅黑; border:1px solid #f0f0f0 ;width:450px;" name="mdurl" id="mdurl"
+					value="">
+				<a href="javascript:;" class="copy" id="copymd" style="font-size: 14px;font-family: 微软雅黑;"> 复制代码</a>
+			</form>
+		</center>
+	</body>
+
+</html>
