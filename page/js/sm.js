@@ -6,14 +6,14 @@ $(document).ready(function() {
       timeout: 5000 //限制请求的时间，当请求大于3秒后，跳出请求
     };
     function showRequest(formData, jqForm, options) {
-      document.getElementById("mdurl").value = "正在获取图片代码...";
     }
     function showResponse(data, status) {
       if (data.code == "success") {
         var url = data.data.url;
         var fileName = getFileName($("#smfile").val());
-        document.getElementById("mdurl").value =
-          "![" + fileName + "](" + url + ")";
+		///操作父框架元素
+		$(".inputvalue" , parent.document).html("![" + fileName + "](" + url + ")");
+		$(".inputvalue" , parent.document).click();
       } else {
         var msg = data.msg;
         if (msg != "No files were uploaded.") {
@@ -24,25 +24,12 @@ $(document).ready(function() {
     $("#upform").ajaxForm(options);
   });
 });
+///获取名字
 function getFileName(o) {
   var pos = o.lastIndexOf("\\");
   return o.substring(pos + 1);
 }
-//复制按钮
-$(document).ready(function() {
-  $("#copymd").click(function() {
-    new clipBoard($("#mdurl"), {
-      copy: function() {
-        return $("#mdurl").val();
-      }
-    });
-  });
-});
-$(document).ready(function() {
-  $("#inputimage").click(function() {
-    $("#smfile").click();
-  });
-});
+//点击改变事件
 $(document).ready(function() {
   $("#smfile").off("change");
   $("#smfile").on("change", function() {
