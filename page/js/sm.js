@@ -2,7 +2,8 @@ $(document).ready(function() {
   $("#btn").click(function() {
     var options = {
       beforeSubmit: showRequest, //提交前的回调函数
-      success: showResponse, //提交后的回调函数
+      success: showResponse, //提交后的回调函	    
+      clearForm: true,
       timeout: 5000 //限制请求的时间，当请求大于3秒后，跳出请求
     };
     function showRequest(formData, jqForm, options) {
