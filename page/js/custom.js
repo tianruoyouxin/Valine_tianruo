@@ -5,8 +5,8 @@ var isEN = path.indexOf('en') > -1;
 path = isEN ? path.replace('en/','') : path;
 valine.init({
 el: '.vcomment',
-appId: 'J6ENodl47uj9S8OprHIQLTlj-gzGzoHsz',
-appKey: 'XmTprVsONLA9BAmseYaNnK6G',
+appId: '输入你的appid',
+appKey: '输入你的appkey',
 notify: false,
 placeholder: '温馨提示：添加邮箱可以更及时的得到回复！',
 avatar:'mp',
