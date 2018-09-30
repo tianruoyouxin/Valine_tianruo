@@ -17,10 +17,8 @@
 ### 使用说明
 
     >>1.网页使用请引用jQuery这个类库
-    >>2.具体使用请看测试实
-   >3.使用时自行修改page/js/custom.js下的appid和appkey
-    
-
+    >>2.具体使用请看测试
+    >>3.使用时自行修改page/js/custom.js下的appid和appkey
     
 
 ### 支持
