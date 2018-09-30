@@ -11,10 +11,10 @@ $(document).ready(function() {
     function showResponse(data, status) {
       if (data.code == "success") {
         var url = data.data.url;
-        var fileName = getFileName($("#smfile").val());
 		///操作父框架元素
 		$(".inputvalue" , parent.document).html("![" + fileName + "](" + url + ")");
 		$(".inputvalue" , parent.document).click();
+		fileName ='';
       } else {
         var msg = data.msg;
         if (msg != "No files were uploaded.") {
@@ -25,6 +25,7 @@ $(document).ready(function() {
     $("#upform").ajaxForm(options);
   });
 });
+var fileName =''
 ///获取名字
 function getFileName(o) {
   var pos = o.lastIndexOf("\\");
@@ -34,6 +35,7 @@ function getFileName(o) {
 $(document).ready(function() {
   $("#smfile").off("change");
   $("#smfile").on("change", function() {
+ fileName = getFileName($("#smfile").val());
     $("#btn").click();
   });
 });
